@@ -37,15 +37,90 @@
   </header>
 
   <main>
-    <section class="hero" id="inicio">
-      <div class="hero-media">
-        <img
-          src="imagenes/hero-complejo-neuquen.jpeg"
-          alt="Vista del Complejo Neuquén preparado para recibir visitantes"
-          width="1920"
-          height="1080"
-          fetchpriority="high">
-      </div>
+   <section class="hero" id="inicio">
+
+    <div class="hero-bg">
+
+        <video
+            id="heroVideo"
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="imagenes/hero-complejo-neuquen.jpeg"
+        >
+            <source
+                src="imagenes/hero-complejo-neuquen.mp4"
+                type="video/mp4"
+            >
+
+            Tu navegador no puede reproducir este video.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+    </div>
+
+
+    <div class="hero-content">
+
+        <p class="hero-kicker">
+            NEUQUÉN · EVENTOS · MOMENTOS
+        </p>
+
+        <h1>
+            COMPLEJO NEUQUÉN
+        </h1>
+
+        <p class="hero-text">
+            Privado y exclusivo, ideal para celebrar
+            cumpleaños, fiestas, reuniones privadas
+            o disfrutar de un asado entre amigos.
+        </p>
+
+
+        <div class="hero-actions">
+
+            <a
+                href="#espacios"
+                class="btn btn-primary"
+            >
+                VER NUESTROS ESPACIOS
+            </a>
+
+            <a
+                href="https://wa.me/542995815109?text=Hola%20Complejo%20Neuqu%C3%A9n%2C%20quiero%20hacer%20una%20consulta."
+                class="btn btn-secondary"
+                target="_blank"
+                rel="noopener"
+            >
+                RESERVAR / CONSULTAR
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTÓN DE SONIDO -->
+
+    <button
+        id="soundToggle"
+        class="sound-toggle"
+        type="button"
+        aria-label="Activar sonido"
+        aria-pressed="false"
+    >
+        <span id="soundIcon">🔇</span>
+
+        <span id="soundText">
+            SONIDO
+        </span>
+    </button>
+
+</section>
       <div class="hero-shade"></div>
       <div class="hero-glow hero-glow-one"></div>
       <div class="hero-glow hero-glow-two"></div>
@@ -90,7 +165,7 @@
         <div class="choice-grid">
           <article class="choice-card choice-one reveal">
             <div class="choice-image">
-              <img src="imagenes/complejo-neuquen-1.jpeg" alt="Complejo Neuquén 1" loading="lazy">
+              < src="imagenes/complejo-neuquen-1.jpeg" alt="Complejo Neuquén 1" loading="lazy">
             </div>
             <div class="choice-overlay"></div>
             <div class="choice-content">
