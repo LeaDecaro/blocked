@@ -419,9 +419,103 @@ document.querySelectorAll(
     );
 
 });
+/* ============================================================
+   HERO VIDEO — BOTÓN DE SONIDO
+   ============================================================ */
+
+const heroVideo = document.getElementById("heroVideo");
+const soundToggle = document.getElementById("soundToggle");
+const soundIcon = document.getElementById("soundIcon");
+const soundText = document.getElementById("soundText");
+
+
+if (heroVideo && soundToggle) {
+
+    soundToggle.addEventListener("click", () => {
+
+        if (heroVideo.muted) {
+
+            /*
+             * ACTIVAR SONIDO
+             */
+
+            heroVideo.muted = false;
+
+            /*
+             * Algunos navegadores requieren
+             * llamar a play nuevamente.
+             */
+
+            const playPromise =
+                heroVideo.play();
+
+            if (
+                playPromise !== undefined
+            ) {
+
+                playPromise.catch(() => {
+
+                    /*
+                     * Si el navegador bloquea
+                     * el audio, volvemos a silencio.
+                     */
+
+                    heroVideo.muted = true;
+
+                });
+
+            }
+
+
+            soundIcon.textContent = "🔊";
+
+            soundText.textContent =
+                "SONIDO";
+
+            soundToggle.setAttribute(
+                "aria-label",
+                "Silenciar video"
+            );
+
+            soundToggle.setAttribute(
+                "aria-pressed",
+                "true"
+            );
+
+
+        } else {
+
+            /*
+             * SILENCIAR
+             */
+
+            heroVideo.muted = true;
+
+
+            soundIcon.textContent = "🔇";
+
+            soundText.textContent =
+                "SONIDO";
+
+            soundToggle.setAttribute(
+                "aria-label",
+                "Activar sonido"
+            );
+
+            soundToggle.setAttribute(
+                "aria-pressed",
+                "false"
+            );
+
+        }
+
+    });
+
+}
 
 
 /* ============================================================
    FIN DEL SCRIPT
    ============================================================ */
+
 
